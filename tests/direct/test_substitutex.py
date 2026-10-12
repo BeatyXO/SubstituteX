@@ -266,6 +266,19 @@ def test_expiry_is_closed_at_exact_boundary(direct_vm, direct_deploy):
         c.assess_invariant(p, i)
 
 
+def test_expiry_invalidates_an_existing_certificate_at_boundary(direct_vm, direct_deploy):
+    c = deploy(direct_vm, direct_deploy)
+    r, i, role_hash = create_role(c)
+    p = propose(c, r, ttl=5)
+    mock_success(direct_vm)
+    c.assess_invariant(p, i)
+    c.finalize_proposal(p)
+    row = c.get_proposal(p)
+    assert c.is_substitutable(p, role_hash, row["certificate_hash"], "origin-v1", "replacement-v2")
+    direct_vm.warp("2026-10-12T10:00:05+00:00")
+    assert c.is_substitutable(p, role_hash, row["certificate_hash"], "origin-v1", "replacement-v2") is False
+
+
 def test_supersession_invalidates_old_certificate_without_rewriting_it(direct_vm, direct_deploy):
     c = deploy(direct_vm, direct_deploy)
     r, i, role_hash = create_role(c)

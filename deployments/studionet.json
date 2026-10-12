@@ -9,8 +9,9 @@
     "chain_id": 61999,
     "rpc": "https://studio.genlayer.com/api"
   },
-  "rpc_chain_id_verified": false,
-  "rpc_check_blocker": "Outbound sockets are denied by the execution environment; eth_chainId was not obtained.",
+  "rpc_chain_id_verified": true,
+  "rpc_chain_id_result": "0xf22f",
+  "rpc_chain_id_check": "Read-only eth_chainId JSON-RPC request to the configured Studionet endpoint.",
   "explorer": "https://explorer-studio.genlayer.com",
   "substitutex_address": null,
   "substitutex_deployment_tx": null,
@@ -22,5 +23,5 @@
   "certificate_hash": null,
   "transactions": [],
   "verified_at": null,
-  "note": "No deployment or write was attempted. This record is incomplete, not deployment evidence."
+  "note": "No deployment or write was attempted. GitHub rejected the initial push authenticated as Ifem1; the immutable fixture SHA is not available until publication. This record is incomplete, not deployment evidence."
 }

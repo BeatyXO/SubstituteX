@@ -18,4 +18,4 @@
 
 ## Local runtime evidence
 
-The 20 passing Direct Mode scenarios include forged leader disagreement, changed source snapshots between findings, expiration at the exact boundary, optional failure with a satisfied `ANY` group, prohibition veto, and unavailable or oversized source responses. The typed gate test uses GenLayer Test's Direct Mode `CallContract` hook. Real RPC source fetching and a finalized onchain consumer call remain unverified because outbound sockets are denied in the current execution environment.
+The 21 passing Direct Mode scenarios include forged leader disagreement, changed source snapshots between findings, expiry at the exact boundary, optional failure with a satisfied `ANY` group, prohibition veto, and unavailable or oversized source responses. The typed gate test uses GenLayer Test's Direct Mode `CallContract` hook. Real RPC source fetching and a finalized onchain consumer call remain unverified because the initial repository push was denied.

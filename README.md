@@ -46,7 +46,7 @@ pytest tests/unit -v
 pytest tests/direct -v
 ```
 
-The stable Direct Mode suite runs with `genlayer-test 0.29.2`, `genlayer-py 0.16.3`, and the contracts' declared `py-genlayer` dependency. The direct tests pin the matching `v0.2.12` runtime to avoid selecting a cached preview artifact, and include a Windows stdin-cleanup workaround for the test runner. Local source and mocked Direct Mode checks have passed. Live Studionet deployment and actual RPC integration remain incomplete because this environment denies outbound sockets.
+The stable Direct Mode suite runs with `genlayer-test 0.29.2`, `genlayer-py 0.16.3`, and the contracts' declared `py-genlayer` dependency. The direct tests pin the matching `v0.2.12` runtime to avoid selecting a cached preview artifact, and include a Windows stdin-cleanup workaround for the test runner. Local source and mocked Direct Mode checks have passed. The read-only Studionet RPC check confirms chain ID 61999. Live deployment and public fixture pinning remain incomplete because GitHub rejected the repository push.
 
 ## Network lock
 
@@ -76,4 +76,4 @@ The frozen host/path prefixes are user-specified; only choose trusted source aut
 
 ## Status
 
-**INCOMPLETE / NOT deployed.** Offline preflight, compilation, unit tests and Direct Mode tests pass. The Direct Mode consumer test exercises the typed `CallContract` path using the suite's cross-contract hook; it does not establish an onchain IC-to-IC call. Stable Studionet writes, actual RPC integration, immutable public fixture pinning and GitHub publication remain blocked. No contract address or transaction ID is recorded unless verified; see `SUBMISSION.md` and `DEPLOYMENT.md`.
+**INCOMPLETE / NOT deployed.** Offline preflight, compilation, unit tests and Direct Mode tests pass. The Direct Mode consumer test exercises the typed `CallContract` path using the suite's cross-contract hook; it does not establish an onchain IC-to-IC call. Stable Studionet writes, immutable public fixture pinning and GitHub publication remain blocked. No contract address or transaction ID is recorded unless verified; see `SUBMISSION.md` and `DEPLOYMENT.md`.
