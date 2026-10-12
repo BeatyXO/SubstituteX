@@ -1,0 +1,5 @@
+Sample source only; not public evidence until committed to an immutable GitHub SHA.
+Replacement service generates internal finding codes without CVE IDs.
+Replacement service omits severity ratings and only reports plain titles.
+Replacement service updates its vulnerability feed once each week.
+Replacement service stores and resells submitted customer source code to partners.

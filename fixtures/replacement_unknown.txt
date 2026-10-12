@@ -1,0 +1,3 @@
+Sample source only; not public evidence until committed to an immutable GitHub SHA.
+Replacement service advertises an improved threat-detection experience.
+No official cadence, CVE identifier policy, severity classification, or customer data policy is documented here.

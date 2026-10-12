@@ -1,0 +1,26 @@
+{
+  "network": "studionet",
+  "chain_id": 61999,
+  "rpc": "https://studio.genlayer.com/api",
+  "status": "BLOCKED_INCOMPLETE",
+  "cli_version": "0.39.1",
+  "cli_reported_network": {
+    "alias": "studionet",
+    "chain_id": 61999,
+    "rpc": "https://studio.genlayer.com/api"
+  },
+  "rpc_chain_id_verified": false,
+  "rpc_check_blocker": "Outbound sockets are denied by the execution environment; eth_chainId was not obtained.",
+  "explorer": "https://explorer-studio.genlayer.com",
+  "substitutex_address": null,
+  "substitutex_deployment_tx": null,
+  "gate_address": null,
+  "gate_deployment_tx": null,
+  "role_id": null,
+  "role_hash": null,
+  "proposal_id": null,
+  "certificate_hash": null,
+  "transactions": [],
+  "verified_at": null,
+  "note": "No deployment or write was attempted. This record is incomplete, not deployment evidence."
+}

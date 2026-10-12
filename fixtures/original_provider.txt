@@ -1,0 +1,5 @@
+Sample source only; not public evidence until committed to an immutable GitHub SHA.
+Original service reports vulnerability identifiers as standard CVE IDs.
+Original service publishes a severity rating for every vulnerability.
+Original service refreshes its vulnerability feed every twelve hours.
+Original service does not store or resell customer source code.
