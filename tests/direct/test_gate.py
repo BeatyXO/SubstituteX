@@ -22,6 +22,7 @@ def test_gate_executes_through_typed_cross_contract_view(direct_vm, direct_deplo
     gate = direct_deploy("contracts/substitution_gate.py", source_address, sdk_version="v0.2.12")
     role_hash, certificate_hash = "1" * 64, "2" * 64
     calls = []
+    source_current = {"allowed": True}
 
     def route(vm, request):
         call = request.get("CallContract")
@@ -33,7 +34,7 @@ def test_gate_executes_through_typed_cross_contract_view(direct_vm, direct_deplo
         assert len(args) == 5
         from genlayer.py import calldata
         from genlayer.py.public_abi import ResultCode
-        allowed = args == [7, role_hash, certificate_hash, "origin-v1", "replacement-v2"]
+        allowed = source_current["allowed"] and args == [7, role_hash, certificate_hash, "origin-v1", "replacement-v2"]
         return bytes([int(ResultCode.RETURN)]) + calldata.encode(allowed)
 
     direct_vm._gl_call_hook = route
@@ -49,8 +50,15 @@ def test_gate_executes_through_typed_cross_contract_view(direct_vm, direct_deplo
         gate.execute_replacement(7, "3" * 64, certificate_hash, "origin-v1", "replacement-v2",
                                  "c" * 64, "b" * 64)
     with direct_vm.expect_revert("current SubstituteX certificate"):
+        gate.execute_replacement(7, role_hash, "9" * 64, "origin-v1", "replacement-v2",
+                                 "f" * 64, "b" * 64)
+    with direct_vm.expect_revert("current SubstituteX certificate"):
         gate.execute_replacement(7, role_hash, certificate_hash, "replacement-v2", "origin-v1",
                                  "d" * 64, "b" * 64)
     with direct_vm.expect_revert("lowercase 64-hex"):
         gate.execute_replacement(7, "G" * 64, certificate_hash, "origin-v1", "replacement-v2",
                                  "e" * 64, "b" * 64)
+    source_current["allowed"] = False  # Models expiry or successor invalidation in the source view.
+    with direct_vm.expect_revert("current SubstituteX certificate"):
+        gate.execute_replacement(7, role_hash, certificate_hash, "origin-v1", "replacement-v2",
+                                 "9" * 64, "b" * 64)
