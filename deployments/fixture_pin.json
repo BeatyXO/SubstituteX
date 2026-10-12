@@ -1,0 +1,11 @@
+{
+  "commit_sha": "246a12ceb2ae1a8b4b643b99a5153868fff99c43",
+  "source_prefix": "https://raw.githubusercontent.com/BeatyXO/SubstituteX/246a12ceb2ae1a8b4b643b99a5153868fff99c43/fixtures/",
+  "urls": {
+    "original_provider.txt": "https://raw.githubusercontent.com/BeatyXO/SubstituteX/246a12ceb2ae1a8b4b643b99a5153868fff99c43/fixtures/original_provider.txt",
+    "replacement_good.txt": "https://raw.githubusercontent.com/BeatyXO/SubstituteX/246a12ceb2ae1a8b4b643b99a5153868fff99c43/fixtures/replacement_good.txt",
+    "replacement_bad.txt": "https://raw.githubusercontent.com/BeatyXO/SubstituteX/246a12ceb2ae1a8b4b643b99a5153868fff99c43/fixtures/replacement_bad.txt",
+    "replacement_unknown.txt": "https://raw.githubusercontent.com/BeatyXO/SubstituteX/246a12ceb2ae1a8b4b643b99a5153868fff99c43/fixtures/replacement_unknown.txt"
+  },
+  "note": "Generator does not confirm GitHub publication. Verify every immutable URL before live use."
+}
