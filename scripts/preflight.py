@@ -56,6 +56,12 @@ def run(final: bool) -> list[str]:
             data = json.loads(pin.read_text())
             if not re.fullmatch(r"[0-9a-f]{40}", data.get("commit_sha", "")):
                 errors.append("invalid fixture commit SHA")
+            else:
+                expected_prefix = "https://raw.githubusercontent.com/BeatyXO/SubstituteX/" + data["commit_sha"] + "/fixtures/"
+                if data.get("source_prefix") != expected_prefix:
+                    errors.append("fixture prefix does not use the immutable SHA")
+                if not data.get("urls") or any(not url.startswith(expected_prefix) for url in data["urls"].values()):
+                    errors.append("fixture URLs must all use the immutable SHA prefix")
         evidence = ROOT / "deployments" / "studionet.json"
         if not evidence.is_file():
             errors.append("missing deployment evidence record")
@@ -64,7 +70,9 @@ def run(final: bool) -> list[str]:
             item = json.loads(evidence.read_text())
             if item.get("network") != "studionet" or item.get("chain_id") != 61999:
                 errors.append("live deployment evidence must target stable chain 61999")
-            if not item.get("substitutex_address") or not item.get("gate_address"):
+            substitutex = item.get("substitutex", {})
+            gate = item.get("gate", {})
+            if not substitutex.get("address") or not gate.get("address"):
                 errors.append("final deployment addresses not recorded")
     return errors
 

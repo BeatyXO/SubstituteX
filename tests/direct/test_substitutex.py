@@ -119,6 +119,17 @@ def test_validator_rejects_forged_leader_verdict(direct_vm, direct_deploy):
     assert direct_vm.run_validator(leader_result=forged) is False
 
 
+def test_validator_independently_accepts_matching_source_assessment(direct_vm, direct_deploy):
+    c = deploy(direct_vm, direct_deploy)
+    r, i, _ = create_role(c)
+    p = propose(c, r)
+    mock_success(direct_vm)
+    assert c.assess_invariant(p, i) == 1
+    # Direct Mode captures the validator closure and re-executes its independent
+    # source fetch and qualitative assessment against the same deterministic mocks.
+    assert direct_vm.run_validator() is True
+
+
 def test_source_digest_change_between_findings_fails_closed(direct_vm, direct_deploy):
     c = deploy(direct_vm, direct_deploy)
     r = c.create_role("Snapshot test", "Keep both source snapshots stable across findings.")

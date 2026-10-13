@@ -10,7 +10,8 @@ This is *not* an identity merge, agreement equivalence checker, simple natural-l
 - `contracts/substitution_gate.py`: separate consumer with typed IC-to-IC read and one-time action-hash replay protection.
 - `fixtures/`: fictional source paragraphs for testing; require publication under a real pinned GitHub commit before live tests.
 - `scripts/preflight.py`: offline source structure and final evidence-shape gate.
-- `scripts/pin_fixture_commit.py`: writes public raw source URLs for a supplied full Git commit SHA, **does not verify publication**.
+- `scripts/pin_fixture_commit.py`: writes public raw source URLs for a supplied full Git commit SHA.
+- `scripts/studionet_write.py`: verifies the active stable Studionet alias and RPC chain ID before a write, then waits for a finalized receipt.
 
 ## Protocol quick view
 
@@ -46,7 +47,7 @@ pytest tests/unit -v
 pytest tests/direct -v
 ```
 
-The stable Direct Mode suite runs with `genlayer-test 0.29.2`, `genlayer-py 0.16.3`, and the contracts' declared `py-genlayer` dependency. The direct tests pin the matching `v0.2.12` runtime to avoid selecting a cached preview artifact, and include a Windows stdin-cleanup workaround for the test runner. Local source and mocked Direct Mode checks have passed. The read-only Studionet RPC check confirms chain ID 61999. Live deployment and public fixture pinning remain incomplete because GitHub rejected the repository push.
+The stable Direct Mode suite uses `genlayer-test 0.29.2`, `genlayer-py 0.16.3`, and the contracts' declared `py-genlayer` dependency. The direct tests pin the matching `v0.2.12` runtime to avoid selecting a cached preview artifact, and include a Windows stdin-cleanup workaround for the test runner. The fixture URLs are pinned to the first published commit and all four URLs were fetched successfully and compared with the repository fixture contents.
 
 ## Network lock
 
@@ -76,4 +77,4 @@ The frozen host/path prefixes are user-specified; only choose trusted source aut
 
 ## Status
 
-**INCOMPLETE / NOT deployed.** Offline preflight, compilation, unit tests and Direct Mode tests pass. The Direct Mode consumer test exercises the typed `CallContract` path using the suite's cross-contract hook; it does not establish an onchain IC-to-IC call. Stable Studionet writes, immutable public fixture pinning and GitHub publication remain blocked. No contract address or transaction ID is recorded unless verified; see `SUBMISSION.md` and `DEPLOYMENT.md`.
+**Live stable Studionet lifecycle completed; final repository checks are recorded in `BUILD_STATUS.md`.** SubstituteX and SubstitutionGate were deployed on chain 61999. The immutable role and five independent findings produced one certified good candidate and one rejected bad candidate. The deployed Gate made a real typed cross-contract view call, recorded one pinned action, and rejected replay, wrong certificate, reversed identities, and a historical certificate after a successor was sealed. Addresses, transaction hashes and explorer links are in `deployments/studionet.json`; detailed evidence and limitations are in `DEPLOYMENT.md` and `SUBMISSION.md`.

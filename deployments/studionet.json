@@ -2,26 +2,148 @@
   "network": "studionet",
   "chain_id": 61999,
   "rpc": "https://studio.genlayer.com/api",
-  "status": "BLOCKED_INCOMPLETE",
+  "explorer": "https://explorer-studio.genlayer.com",
+  "status": "LIVE_PROOF_COMPLETE_WITH_LIMITATIONS",
   "cli_version": "0.39.1",
-  "cli_reported_network": {
+  "cli_network_info": {
     "alias": "studionet",
     "chain_id": 61999,
     "rpc": "https://studio.genlayer.com/api"
   },
-  "rpc_chain_id_verified": true,
-  "rpc_chain_id_result": "0xf22f",
-  "rpc_chain_id_check": "Read-only eth_chainId JSON-RPC request to the configured Studionet endpoint.",
-  "explorer": "https://explorer-studio.genlayer.com",
-  "substitutex_address": null,
-  "substitutex_deployment_tx": null,
-  "gate_address": null,
-  "gate_deployment_tx": null,
-  "role_id": null,
-  "role_hash": null,
-  "proposal_id": null,
-  "certificate_hash": null,
-  "transactions": [],
-  "verified_at": null,
-  "note": "No deployment or write was attempted. GitHub rejected the initial push authenticated as Ifem1; the immutable fixture SHA is not available until publication. This record is incomplete, not deployment evidence."
+  "rpc_chain_id": "0xf22f",
+  "verified_at_utc": "2026-10-13T00:02:18Z",
+  "fixture_commit_sha": "246a12ceb2ae1a8b4b643b99a5153868fff99c43",
+  "fixture_source_prefix": "https://raw.githubusercontent.com/BeatyXO/SubstituteX/246a12ceb2ae1a8b4b643b99a5153868fff99c43/fixtures/",
+  "substitutex": {
+    "address": "0x49e6192080F04cD22B5EEB49847254246A9b697A",
+    "deployment_tx": "0xf12f48d98dadabc2a7b0739d3c897d916add48bff646d5c68d120d51b91fc0d1",
+    "deployment_status": "FINALIZED",
+    "explorer_url": "https://explorer-studio.genlayer.com/tx/0xf12f48d98dadabc2a7b0739d3c897d916add48bff646d5c68d120d51b91fc0d1"
+  },
+  "gate": {
+    "address": "0x8Fd67e5149e1B02Ed9A6329Bca14765502995cE5",
+    "deployment_tx": "0x6d85b5f231673cf307f5f1619106fe570e9e32e7ad411b32103044e1027d25fc",
+    "deployment_status": "FINALIZED",
+    "explorer_url": "https://explorer-studio.genlayer.com/tx/0x6d85b5f231673cf307f5f1619106fe570e9e32e7ad411b32103044e1027d25fc"
+  },
+  "positive_lifecycle": {
+    "role_id": 1,
+    "role_version": 1,
+    "definition_hash": "b5bc6970094b75ac3d927e48363fed231ef2b2b8340327946965ec3d03abb4df",
+    "role_create_tx": "0x019c7ba1b08365e25ee563d94d4527421135823bb5ffb37c5a737abf61cc8fc7",
+    "role_prefix_tx": "0x43dd2bf4ff22d32575d8ccd313f7ca2a5026d7173f4d0252e4f76a43d5f7d64b",
+    "role_invariant_txs": [
+      "0x85ecc1ab10a313e555effa00dcef2d40fc52e6b414ec60d020fbdfcd56a71042",
+      "0x4bf593f00bee82dc43aa20b112df9fb33a3e7e17ae4135dc329678e2adfbe212",
+      "0x950c86dd19cfbaeb2018d1a24a50ed82f25842ce4de873b6ab84dabdc3ac430d",
+      "0x1237e0174881de5584f840653ad78b63a8f4ff33f36a23ed6fce08a47a6f1ad4",
+      "0x3e23a90aa34291ecbc54aee759a4c2f1a06e01d9cf751fa35d183bc476b6bc97"
+    ],
+    "role_seal_tx": "0x4dc8c1f53d10dd144ac4e9cfbc8182e588064c15702a8e73c2daaa169178d184",
+    "proposal_id": 1,
+    "original_key": "provider:original",
+    "replacement_key": "provider:replacement-good",
+    "proposal_tx": "0xab06edbf23a73718e53a59c7d193fa6d5acd57871fa3a3b8a086956865882783",
+    "proposal_expiry_epoch": 1791933741,
+    "finding_txs": [
+      "0x8d8f96b5ba629321bbaa03fa429d3c2aafd92b08f9f938d746247195d9611332",
+      "0x7bea9c24f60632aaac7b5cb0e44618149d1b959a41ea12d6c00a65156970e7a3",
+      "0x48535540a3c3bdd2eb426e41d8980c836877f0f63cb14e48b8e03ba8e74ffce4",
+      "0xc76c718311d362ccbff22cfeb18353cfaea62ebd8ebf249395c49476bed3ff13",
+      "0xd8b44c341e09afb195323305bd4d9ca711f247f734d28d072bbfbe05c2964592"
+    ],
+    "finding_verdicts": [1, 1, 1, 4, 1],
+    "original_source_digest": "55d49568ac7f9593e15ac7209078d382affaf12eb3345fcf8ace97644f78b922",
+    "replacement_source_digest": "5e3cb09f021c49c99d9b8837056ee1f93276fe6787be8e7f6be6e26a0f8fd938",
+    "composition": {
+      "evaluated": 5,
+      "failed": 0,
+      "unresolved": 0,
+      "optional_not_preserved": 1,
+      "certifiable": true
+    },
+    "finalize_tx": "0x33738a8a8d67046ffff91b9e2d493ebbdc784e6d56aae03be42b625d8d2e5d5a",
+    "proposal_status": "CERTIFIED",
+    "certificate_hash": "229fed246ee71c33c596695f883a8834151c42061466531d47da738f4131e052",
+    "exact_pinned_query": true,
+    "wrong_role_hash_query": false,
+    "wrong_certificate_hash_query": false,
+    "reversed_identity_query": false,
+    "explorer_finalize_url": "https://explorer-studio.genlayer.com/tx/0x33738a8a8d67046ffff91b9e2d493ebbdc784e6d56aae03be42b625d8d2e5d5a"
+  },
+  "negative_lifecycle": {
+    "proposal_id": 2,
+    "replacement_key": "provider:replacement-bad",
+    "proposal_tx": "0xf2e4dc622b45eba64346bcb19f5d9ef87dd59db6c4dd13c986f991c04c4fab15",
+    "finding_txs": [
+      "0xc18f542cb5cdd42018e3d14bbed6e613feb6eb6c619eb58b9267fec8dd132b42",
+      "0x7bcbd0f1d4144b4e2886a6795a0541b91f1c4be9716e2cad78dd2b8c5b36f925",
+      "0x1be668ed6b63185a25f2c1e16f2d405017a7f38d6c71399e99952be4b80b887f",
+      "0x46fd5c1ef55b9ba2f90edcb8dd83ccf474c4cf06a4bd0dae51e6a4ef73f67ff9",
+      "0x831b635a8a0b139b3e4af2484bc21eb260ae13a71f457e44668b5f77bad92b4f"
+    ],
+    "finding_verdicts": [2, 2, 2, 2, 2],
+    "composition": {
+      "evaluated": 5,
+      "failed": 3,
+      "unresolved": 0,
+      "optional_not_preserved": 1,
+      "certifiable": false
+    },
+    "finalize_tx": "0x9fd07a755689ce250ef7435b3712ed26b9d2e458d4b2de95ecca806294883cc2",
+    "proposal_status": "REJECTED",
+    "certificate_hash": ""
+  },
+  "consumer_proof": {
+    "successful_action_tx": "0xd298c28b457eb5a964817f994d20ce87c4e0d942a507979261dd8c18765f3f1a",
+    "action_hash": "6f3d358dea56b8deea256b050fdcd7a0fd521559f97d0b19b9bf56c8d71130dd",
+    "payload_hash": "013d227caa156e2d71ea0276be14c847e16a1cbb62f1f205b87e18f487c4e49f",
+    "recorded": true,
+    "replay_rejection_tx": "0x42422df6b90ae68a2832d74deb9dc8299954fbe541d17c8957a3fb9874cea3c8",
+    "replay_rejection": "EXPECTED: replacement action replay",
+    "wrong_format_hash_rejection_tx": "0x6591b2fe9a0ad5a34cd60056993d50bd7b8bef3f2a8eb2292a0f08814c4d62a0",
+    "wrong_format_hash_rejection": "EXPECTED: hashes must be lowercase 64-hex digests (CLI parsed all-numeric input as a number)",
+    "wrong_certificate_rejection_tx": "0x93c29c1a32c7614a2e7d1e615d8e18a3861f46285127e740f6d2f5ec6e73d0c4",
+    "wrong_certificate_rejection": "EXPECTED: current SubstituteX certificate required",
+    "reversed_identity_rejection_tx": "0x8959f1f5ecf09b8ee444f52d635063e47177c63b1ca0b5f062ab7d1a0b57f006",
+    "reversed_identity_rejection": "EXPECTED: current SubstituteX certificate required",
+    "explorer_success_url": "https://explorer-studio.genlayer.com/tx/0xd298c28b457eb5a964817f994d20ce87c4e0d942a507979261dd8c18765f3f1a",
+    "explorer_replay_url": "https://explorer-studio.genlayer.com/tx/0x42422df6b90ae68a2832d74deb9dc8299954fbe541d17c8957a3fb9874cea3c8"
+  },
+  "successor_invalidation": {
+    "role_id": 2,
+    "version": 2,
+    "previous_role_id": 1,
+    "definition_hash": "2619662669841a421e85af8894de0027ea9bbc74374848c74a64f6e2df98bc27",
+    "create_tx": "0x880bb5a7223811512908c8b75a30a17dbb9090951c465842154231e4b927da7d7",
+    "seal_tx": "0x00a97a6eb72766719b88efa2fda74c965ae66721b16101df8d27a099764da1bb",
+    "old_role_successor_id": 2,
+    "historical_proposal_status": "CERTIFIED",
+    "old_certificate_query_after_seal": false,
+    "old_certificate_new_gate_action_rejection_tx": "0xdb341f437b574e8082fc9aa40db3ff388ecfd8b0612ac971138f18b45d76c3b2",
+    "old_certificate_new_gate_action_rejection": "EXPECTED: current SubstituteX certificate required"
+  },
+  "consensus_disagreement": {
+    "transaction": "0x888def1d859c0a6c4fcf48368ee19ff09d7515a024e709f575fe7711335936d3",
+    "receipt_status": "FINALIZED",
+    "consensus_result": "MAJORITY_DISAGREE",
+    "validator_votes": ["IDLE", "DISAGREE", "DISAGREE", "DISAGREE", "AGREE"],
+    "state_change": false,
+    "retry_transaction": "0x7bea9c24f60632aaac7b5cb0e44618149d1b959a41ea12d6c00a65156970e7a3",
+    "retry_consensus_result": "MAJORITY_AGREE"
+  },
+  "known_limitations": [
+    "Live expiry was not awaited; exact expiry-boundary behavior is covered by Direct Mode time-warp tests.",
+    "The CLI trace method gen_dbg_traceTransaction is unavailable on stable Studionet; receipts and explorer transaction pages were used instead.",
+    "Studionet RPC intermittently returned HTML where JSON was expected. Affected transactions were not blindly resubmitted; hashes were captured and their receipts were retrieved later when available.",
+    "The Direct Mode test runner's cross-contract hook is not itself proof of on-chain calls; the finalized SubstitutionGate action transaction is the independent live cross-contract evidence."
+  ],
+  "explorer_pages_verified": [
+    "https://explorer-studio.genlayer.com/tx/0xf12f48d98dadabc2a7b0739d3c897d916add48bff646d5c68d120d51b91fc0d1",
+    "https://explorer-studio.genlayer.com/tx/0x33738a8a8d67046ffff91b9e2d493ebbdc784e6d56aae03be42b625d8d2e5d5a",
+    "https://explorer-studio.genlayer.com/tx/0xd298c28b457eb5a964817f994d20ce87c4e0d942a507979261dd8c18765f3f1a",
+    "https://explorer-studio.genlayer.com/tx/0x42422df6b90ae68a2832d74deb9dc8299954fbe541d17c8957a3fb9874cea3c8"
+  ],
+  "final_repository_commit": null,
+  "final_repository_commit_note": "The exact final HEAD SHA is reported in the release output after push; a commit cannot contain its own SHA."
 }
